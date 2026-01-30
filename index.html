@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START FOOTBALL | Грай як профі</title>
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Шрифти -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .italic-uppercase {
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .yellow-shadow {
+            box-shadow: 0 0 50px rgba(250, 204, 21, 0.15);
+        }
+        section { scroll-margin-top: 80px; }
+        
+        /* Анімація появи */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навігація -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="bg-yellow-400 p-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="font-black 🏆" />
+                        <text x="2" y="18" font-size="16">🏆</text>
+                    </svg>
+                </div>
+                <span class="text-2xl font-black italic-uppercase">START<span class="text-yellow-400">FOOTBALL</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-slate-300 hover:text-yellow-400 font-bold uppercase text-xs tracking-widest transition">Переваги</a>
+                <a href="#program" class="text-slate-300 hover:text-yellow-400 font-bold uppercase text-xs tracking-widest transition">Програма</a>
+                <a href="#contact" class="bg-yellow-400 hover:bg-white text-black px-6 py-2.5 rounded-full font-black transition uppercase text-xs">Записатися</a>
+            </div>
+            
+            <button class="md:hidden text-yellow-400" onclick="toggleMenu()">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-40 translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8">
+        <a href="#features" onclick="toggleMenu()" class="text-3xl font-black italic-uppercase">Переваги</a>
+        <a href="#program" onclick="toggleMenu()" class="text-3xl font-black italic-uppercase">Програма</a>
+        <a href="#contact" onclick="toggleMenu()" class="w-2/3 bg-yellow-400 text-black py-5 rounded-2xl font-black text-xl italic-uppercase text-center">Почати</a>
+    </div>
+
+    <!-- Hero Секція -->
+    <section class="min-h-screen flex items-center pt-20 hero-gradient">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 space-y-8 text-center lg:text-left fade-in">
+                    <div class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest">
+                        ⭐ Професійний курс для дому
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black leading-[0.9] italic-uppercase">
+                        ГРАЙ ЯК <br>
+                        <span class="text-yellow-400">ПРОФІ</span> <br>
+                        ВДОМА
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-lg mx-auto lg:mx-0">
+                        Унікальна методика тренувань для дітей. Розвивай техніку та контроль м'яча прямо у своїй кімнаті.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="bg-yellow-400 hover:bg-white text-black px-10 py-5 rounded-2xl font-black text-xl italic-uppercase transition flex items-center justify-center gap-3">
+                            Почати тренування
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full fade-in" style="animation-delay: 0.2s">
+                    <div class="relative rounded-[2.5rem] overflow-hidden border-[6px] border-yellow-400 yellow-shadow bg-zinc-900 aspect-video flex items-center justify-center group cursor-pointer">
+                        <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M4.5 3.5v13l11-6.5-11-6.5z"/></svg>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white font-black italic-uppercase text-sm bg-black/50 px-4 py-2 rounded-lg backdrop-blur-md">
+                            Дивитись трейлер
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція Переваг -->
+    <section id="features" class="py-24 bg-white text-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-black italic-uppercase mb-20 leading-none">
+                ЩО ТИ <span class="text-yellow-400">ОТРИМАЄШ?</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border-2 border-transparent hover:border-yellow-400 transition-all">
+                    <div class="text-4xl mb-6">📹</div>
+                    <h3 class="text-2xl font-black italic-uppercase mb-4">25 Відео-уроків</h3>
+                    <p class="text-slate-500 font-medium">Покрокові інструкції від професійних тренерів.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border-2 border-transparent hover:border-yellow-400 transition-all">
+                    <div class="text-4xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-black italic-uppercase mb-4">Дриблінг</h3>
+                    <p class="text-slate-500 font-medium">Вправи на контроль м'яча на обмеженій площі.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border-2 border-transparent hover:border-yellow-400 transition-all">
+                    <div class="text-4xl mb-6">📝</div>
+                    <h3 class="text-2xl font-black italic-uppercase mb-4">Програма</h3>
+                    <p class="text-slate-500 font-medium">Чіткий графік занять для досягнення результату.</p>
+                </div>
+                <div class="p-10 rounded-[2.5rem] bg-slate-50 border-2 border-transparent hover:border-yellow-400 transition-all">
+                    <div class="text-4xl mb-6">⚡</div>
+                    <h3 class="text-2xl font-black italic-uppercase mb-4">Реакція</h3>
+                    <p class="text-slate-500 font-medium">Розвиток координації та швидкості прийняття рішень.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма запису -->
+    <section id="contact" class="py-24 bg-black">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-yellow-400 rounded-[3.5rem] p-8 md:p-16 border-[10px] border-zinc-900">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2 text-black">
+                        <h3 class="text-5xl md:text-6xl font-black italic-uppercase mb-6 leading-none">ГОТОВИЙ ДО <br> ВИКЛИКУ?</h3>
+                        <p class="font-bold text-lg">Залиш заявку, і ми надішлемо перший безкоштовний урок!</p>
+                    </div>
+                    <div class="lg:w-1/2 w-full bg-white p-8 rounded-[2.5rem] shadow-2xl">
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 ml-2">Ваше ім'я</label>
+                                <input type="text" required placeholder="ОЛЕКСАНДР" class="w-full p-4 rounded-xl bg-slate-100 border-none font-bold outline-none focus:ring-2 focus:ring-yellow-400 text-black">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 ml-2">Телефон</label>
+                                <input type="tel" required placeholder="+380" class="w-full p-4 rounded-xl bg-slate-100 border-none font-bold outline-none focus:ring-2 focus:ring-yellow-400 text-black">
+                            </div>
+                            <button type="submit" class="w-full bg-black text-yellow-400 font-black py-5 rounded-xl text-xl italic-uppercase hover:scale-[1.02] transition-transform active:scale-95">
+                                ВІДПРАВИТИ ЗАЯВКУ
+                            </button>
+                        </form>
+                        <div id="successMessage" class="hidden text-center py-8">
+                            <div class="text-4xl mb-4">✅</div>
+                            <h4 class="text-xl font-black italic-uppercase text-black">Дякуємо!</h4>
+                            <p class="text-slate-500">Ми зв'яжемося з вами найближчим часом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <div class="text-2xl font-black italic-uppercase">START<span class="text-yellow-400">FOOTBALL</span></div>
+        <p class="text-[10px] text-slate-600 mt-4 tracking-[0.4em] font-black uppercase">© 2026 ВСІ ПРАВА ЗАХИЩЕНІ</p>
+    </footer>
+
+    <script>
+        // Керування меню
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+
+        // Зміна стилю навігації при скролі
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/90', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Обробка форми
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+        });
+
+        // Плавний скрол для посилань
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
